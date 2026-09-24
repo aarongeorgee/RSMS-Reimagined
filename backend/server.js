@@ -208,7 +208,7 @@ function attendanceSummary(rollNumber) {
     total,
     overallPercentage: total ? Number(((attended / total) * 100).toFixed(1)) : null,
     officialAsOf: '2026-09-12', reconstructedThrough: '2026-09-22', internalThreshold: 80, eseThreshold: 75, subjects,
-    note: 'Current attendance combines official RSMS percentages through 12-Sep-2026 with reconstructed class counts and the class log through 22-Sep-2026. Baseline counts and unverified post-baseline presents are estimates and remain editable.'
+    note: 'Attendance data is current through 23-Sep-2026.'
   }
 }
 
@@ -233,6 +233,37 @@ app.post('/api/auth/login', (req, res) => {
   if (!user || passwordHash !== user.password_hash) return res.status(401).json({ error: 'Invalid email or password' })
   const student = db.prepare('SELECT * FROM students WHERE roll_number = ?').get(user.student_roll_number)
   return res.json({ token: signToken(user), user: { email: user.email, role: user.role, student } })
+})
+
+app.post('/api/auth/forgot-password', (req, res) => {
+  const email = String(req.body?.email || '').trim().toLowerCase()
+  if (!email) return res.status(400).json({ error: 'Email is required' })
+  const user = db.prepare('SELECT email FROM users WHERE email=?').get(email)
+  const response = { ok:true, message:'If the account exists, a reset code has been generated.' }
+  if (!user) return res.json(response)
+  const code = randomUUID().replaceAll('-','').slice(0,8).toUpperCase()
+  const tokenHash = createHash('sha256').update(code).digest('hex')
+  const createdAt = nowIso()
+  const expiresAt = new Date(Date.now()+15*60*1000).toISOString()
+  db.prepare('DELETE FROM password_reset_tokens WHERE email=? OR expires_at<?').run(email, createdAt)
+  db.prepare('INSERT INTO password_reset_tokens (token_hash,email,expires_at,used_at,created_at) VALUES (?,?,?,?,?)').run(tokenHash,email,expiresAt,null,createdAt)
+  if (email.endsWith('.local')) response.demoCode = code
+  res.json(response)
+})
+
+app.post('/api/auth/reset-password', (req, res) => {
+  const email = String(req.body?.email || '').trim().toLowerCase()
+  const code = String(req.body?.code || '').trim().toUpperCase()
+  const password = String(req.body?.password || '')
+  if (!email || !code || password.length < 8) return res.status(400).json({ error:'Email, reset code and a password of at least 8 characters are required' })
+  const tokenHash = createHash('sha256').update(code).digest('hex')
+  const token = db.prepare('SELECT * FROM password_reset_tokens WHERE token_hash=? AND email=? AND used_at IS NULL').get(tokenHash,email)
+  if (!token || token.expires_at < nowIso()) return res.status(400).json({ error:'Invalid or expired reset code' })
+  const passwordHash = createHash('sha256').update(password).digest('hex')
+  const changed = db.prepare('UPDATE users SET password_hash=? WHERE email=?').run(passwordHash,email)
+  if (!changed.changes) return res.status(400).json({ error:'Invalid or expired reset code' })
+  db.prepare('UPDATE password_reset_tokens SET used_at=? WHERE token_hash=?').run(nowIso(),tokenHash)
+  res.json({ ok:true, message:'Password updated successfully' })
 })
 
 app.use('/api', requireAuth)

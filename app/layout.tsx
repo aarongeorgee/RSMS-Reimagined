@@ -11,9 +11,14 @@ export const metadata: Metadata = {
   manifest: "/manifest.webmanifest",
   appleWebApp: { capable: true, title: "RSMS", statusBarStyle: "black-translucent" },
   icons: {
-    icon: "/favicon.svg",
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/rsms-icon-192-v42.png", sizes: "192x192", type: "image/png" },
+    ],
     shortcut: "/favicon.svg",
-    apple: "/icon-192.png",
+    apple: [
+      { url: "/rsms-apple-touch-180-v42.png", sizes: "180x180", type: "image/png" },
+    ],
   },
 };
 

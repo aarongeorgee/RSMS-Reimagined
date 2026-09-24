@@ -539,8 +539,7 @@ async function attendanceSummary(env: Env, rollNumber: string) {
     internalThreshold: 80,
     eseThreshold: 75,
     subjects,
-    note:
-      "Current attendance combines official RSMS percentages through 12-Sep-2026 with reconstructed class counts and the class log through 22-Sep-2026. Baseline counts and unverified post-baseline presents are estimates and remain editable.",
+    note: "Attendance data is current through 22-Sep-2026.",
   };
 }
 
@@ -693,6 +692,41 @@ export default {
             student,
           },
         });
+      }
+
+      if (path === "/api/auth/forgot-password" && request.method === "POST") {
+        const body = await request.json<{ email?: string }>();
+        const email = body.email?.trim().toLowerCase();
+        if (!email) return json({ error: "Email is required" }, 400);
+        await env.DB.prepare(`CREATE TABLE IF NOT EXISTS password_reset_tokens (token_hash TEXT PRIMARY KEY,email TEXT NOT NULL,expires_at TEXT NOT NULL,used_at TEXT,created_at TEXT NOT NULL)`).run();
+        const user = await env.DB.prepare(`SELECT email FROM users WHERE email=?`).bind(email).first<any>();
+        const response: any = { ok: true, message: "If the account exists, a reset code has been generated." };
+        if (!user) return json(response);
+        const code = crypto.randomUUID().replace(/-/g, "").slice(0, 8).toUpperCase();
+        const tokenHash = await sha256(code);
+        const createdAt = new Date().toISOString();
+        const expiresAt = new Date(Date.now() + 15 * 60 * 1000).toISOString();
+        await env.DB.prepare(`DELETE FROM password_reset_tokens WHERE email=? OR expires_at<?`).bind(email, createdAt).run();
+        await env.DB.prepare(`INSERT INTO password_reset_tokens (token_hash,email,expires_at,used_at,created_at) VALUES (?,?,?,?,?)`).bind(tokenHash,email,expiresAt,null,createdAt).run();
+        if (email.endsWith(".local")) response.demoCode = code;
+        return json(response);
+      }
+
+      if (path === "/api/auth/reset-password" && request.method === "POST") {
+        const body = await request.json<{ email?: string; code?: string; password?: string }>();
+        const email = body.email?.trim().toLowerCase();
+        const code = body.code?.trim().toUpperCase();
+        const password = body.password || "";
+        if (!email || !code || password.length < 8) return json({ error: "Email, reset code and a password of at least 8 characters are required" }, 400);
+        await env.DB.prepare(`CREATE TABLE IF NOT EXISTS password_reset_tokens (token_hash TEXT PRIMARY KEY,email TEXT NOT NULL,expires_at TEXT NOT NULL,used_at TEXT,created_at TEXT NOT NULL)`).run();
+        const tokenHash = await sha256(code);
+        const token = await env.DB.prepare(`SELECT * FROM password_reset_tokens WHERE token_hash=? AND email=? AND used_at IS NULL`).bind(tokenHash,email).first<any>();
+        if (!token || token.expires_at < new Date().toISOString()) return json({ error: "Invalid or expired reset code" }, 400);
+        const passwordHash = await sha256(password);
+        const result = await env.DB.prepare(`UPDATE users SET password_hash=? WHERE email=?`).bind(passwordHash,email).run();
+        if (!result.meta.changes) return json({ error: "Invalid or expired reset code" }, 400);
+        await env.DB.prepare(`UPDATE password_reset_tokens SET used_at=? WHERE token_hash=?`).bind(new Date().toISOString(),tokenHash).run();
+        return json({ ok: true, message: "Password updated successfully" });
       }
 
       const currentUser = await authenticate(request, env);

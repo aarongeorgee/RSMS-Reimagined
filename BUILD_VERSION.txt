@@ -1,4 +1,1 @@
-RSMS Universal v4.1.0
-Build date: 2026-09-24
-Status: deployment candidate
-Forecast extension: 2026-10-09
+RSMS Reimagined v4.2 FINAL — password reset, idle timeout, Cloudflare deployment polish

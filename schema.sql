@@ -5,7 +5,13 @@ CREATE TABLE IF NOT EXISTS users (
   role TEXT NOT NULL DEFAULT 'student',
   student_roll_number TEXT NOT NULL
 );
-
+CREATE TABLE IF NOT EXISTS password_reset_tokens (
+  token_hash TEXT PRIMARY KEY,
+  email TEXT NOT NULL,
+  expires_at TEXT NOT NULL,
+  used_at TEXT,
+  created_at TEXT NOT NULL
+);
 CREATE TABLE IF NOT EXISTS students (
   roll_number TEXT PRIMARY KEY,
   name TEXT NOT NULL,
@@ -17,7 +23,6 @@ CREATE TABLE IF NOT EXISTS students (
   phone TEXT DEFAULT '',
   bio TEXT DEFAULT ''
 );
-
 CREATE TABLE IF NOT EXISTS requests (
   id TEXT PRIMARY KEY,
   roll_number TEXT NOT NULL,
@@ -28,7 +33,6 @@ CREATE TABLE IF NOT EXISTS requests (
   created_at TEXT NOT NULL,
   updated_at TEXT NOT NULL
 );
-
 CREATE TABLE IF NOT EXISTS attendance (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   roll_number TEXT NOT NULL,
@@ -37,7 +41,6 @@ CREATE TABLE IF NOT EXISTS attendance (
   total INTEGER NOT NULL,
   percentage REAL NOT NULL
 );
-
 CREATE TABLE IF NOT EXISTS marks (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   roll_number TEXT NOT NULL,
@@ -47,7 +50,6 @@ CREATE TABLE IF NOT EXISTS marks (
   obtained_marks REAL,
   max_marks REAL
 );
-
 CREATE TABLE IF NOT EXISTS notices (
   id TEXT PRIMARY KEY,
   title TEXT NOT NULL,
@@ -57,14 +59,12 @@ CREATE TABLE IF NOT EXISTS notices (
   posted_by TEXT,
   posted_at TEXT NOT NULL
 );
-
 CREATE TABLE IF NOT EXISTS subjects (
   code TEXT PRIMARY KEY,
   name TEXT NOT NULL,
   short_name TEXT NOT NULL,
   track_attendance INTEGER NOT NULL DEFAULT 1
 );
-
 CREATE TABLE IF NOT EXISTS timetable_slots (
   id TEXT PRIMARY KEY,
   day_index INTEGER NOT NULL,
@@ -78,7 +78,6 @@ CREATE TABLE IF NOT EXISTS timetable_slots (
   kind TEXT,
   track_attendance INTEGER NOT NULL DEFAULT 1
 );
-
 CREATE TABLE IF NOT EXISTS academic_events (
   id TEXT PRIMARY KEY,
   start_date TEXT NOT NULL,
@@ -89,7 +88,6 @@ CREATE TABLE IF NOT EXISTS academic_events (
   start_time TEXT,
   end_time TEXT
 );
-
 CREATE TABLE IF NOT EXISTS class_overrides (
   id TEXT PRIMARY KEY,
   date TEXT NOT NULL,
@@ -101,7 +99,6 @@ CREATE TABLE IF NOT EXISTS class_overrides (
   updated_at TEXT NOT NULL,
   UNIQUE(date, timetable_id)
 );
-
 CREATE TABLE IF NOT EXISTS extra_classes (
   id TEXT PRIMARY KEY,
   date TEXT NOT NULL,
@@ -114,7 +111,6 @@ CREATE TABLE IF NOT EXISTS extra_classes (
   created_at TEXT NOT NULL,
   updated_at TEXT NOT NULL
 );
-
 CREATE TABLE IF NOT EXISTS attendance_baselines (
   roll_number TEXT NOT NULL,
   subject_code TEXT NOT NULL,
@@ -126,7 +122,6 @@ CREATE TABLE IF NOT EXISTS attendance_baselines (
   source_note TEXT DEFAULT '',
   PRIMARY KEY (roll_number, subject_code)
 );
-
 CREATE TABLE IF NOT EXISTS attendance_entries (
   id TEXT PRIMARY KEY,
   roll_number TEXT NOT NULL,
@@ -140,15 +135,3 @@ CREATE TABLE IF NOT EXISTS attendance_entries (
   updated_at TEXT NOT NULL,
   UNIQUE(roll_number, date, timetable_id)
 );
-
-CREATE INDEX IF NOT EXISTS idx_attendance_entries_roll_date
-ON attendance_entries (roll_number, date);
-
-CREATE INDEX IF NOT EXISTS idx_timetable_day
-ON timetable_slots (day_index, period);
-
-CREATE INDEX IF NOT EXISTS idx_academic_events_dates
-ON academic_events (start_date, end_date);
-
-CREATE INDEX IF NOT EXISTS idx_requests_roll
-ON requests (roll_number);

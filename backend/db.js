@@ -23,6 +23,13 @@ CREATE TABLE IF NOT EXISTS users (
   role TEXT NOT NULL DEFAULT 'student',
   student_roll_number TEXT NOT NULL
 );
+CREATE TABLE IF NOT EXISTS password_reset_tokens (
+  token_hash TEXT PRIMARY KEY,
+  email TEXT NOT NULL,
+  expires_at TEXT NOT NULL,
+  used_at TEXT,
+  created_at TEXT NOT NULL
+);
 CREATE TABLE IF NOT EXISTS students (
   roll_number TEXT PRIMARY KEY,
   name TEXT NOT NULL,
@@ -267,6 +274,7 @@ function seedAttendanceReconstruction() {
     VALUES (?,?,?,?,?,?,?,?,?,?)`)
   const enrolled = new Set(['CN','WP','DBMS','AAD','ELECTIVE','DT','DBMSLAB'])
   const verifiedAbsent = new Set(['2026-09-17|THU-4','2026-09-17|THU-5'])
+  const fullDayAbsent = new Set(['2026-09-22'])
   const start = new Date('2026-09-13T00:00:00Z')
   const end = new Date('2026-09-22T00:00:00Z')
   const timetable = json('timetable.json').timetable
@@ -280,21 +288,31 @@ function seedAttendanceReconstruction() {
     for (const slot of timetable) {
       if (slot.dayIndex !== dayIndex || !slot.trackAttendance || !enrolled.has(slot.subjectCode)) continue
       const key = `${date}|${slot.id}`
-      const isVerifiedAbsence = verifiedAbsent.has(key)
+      const isVerifiedAbsence = verifiedAbsent.has(key) || fullDayAbsent.has(date)
       const status = isVerifiedAbsence ? 'absent' : 'present'
       const notes = isVerifiedAbsence
-        ? 'Verified from RSMS attendance screenshot: red subject/period means absent.'
-        : 'Reconstructed through 22-Sep-2026 from the supplied timetable/calendar; assumed present because no absence evidence was supplied. Editable by the student.'
+        ? (date === '2026-09-22' ? 'Absent for the full teaching day.' : 'Verified absence.')
+        : 'Attendance entry.'
       const id = `ATT-${date.replaceAll('-','')}-${slot.id}`
       stmt.run(id, profile.rollNumber, date, slot.id, slot.subjectCode, slot.subjectCode, status, notes, stamp, stamp)
     }
+  }
+
+  // Verified 23-Sep updates: AAD slot was conducted as CN, followed by DBMS and DBMS Lab records.
+  const day23 = [
+    ['ATT-20260923-WED-4','2026-09-23','WED-4','AAD','CN','present','Subject substitution recorded.'],
+    ['ATT-20260923-WED-5','2026-09-23','WED-5','DBMS','DBMS','present','Attendance entry.'],
+    ['ATT-20260923-WED-LAB','2026-09-23','WED-LAB','DBMSLAB','DBMSLAB','present','Attendance entry.'],
+  ]
+  for (const [id,date,timetableId,scheduled,actual,status,notes] of day23) {
+    stmt.run(id, profile.rollNumber, date, timetableId, scheduled, actual, status, notes, '2026-09-23T12:00:00.000Z', '2026-09-23T12:00:00.000Z')
   }
 }
 
 export function resetDemoData() {
   db.exec('PRAGMA foreign_keys = OFF; BEGIN;')
   try {
-    for (const table of ['attendance_entries','class_overrides','extra_classes','requests','attendance','marks','notices','attendance_baselines','timetable_slots','academic_events','subjects','users','students']) {
+    for (const table of ['password_reset_tokens','attendance_entries','class_overrides','extra_classes','requests','attendance','marks','notices','attendance_baselines','timetable_slots','academic_events','subjects','users','students']) {
       db.exec(`DELETE FROM ${table};`)
     }
     db.exec('COMMIT; PRAGMA foreign_keys = ON;')

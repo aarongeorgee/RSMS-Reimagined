@@ -10,7 +10,7 @@ assert.equal(db.prepare("SELECT COUNT(*) AS c FROM academic_events WHERE start_d
 assert.ok(db.prepare("SELECT COUNT(*) AS c FROM academic_events WHERE start_date <= '2026-09-21' AND end_date >= '2026-09-21' AND no_classes=1").get().c >= 1, '21 Sep 2026 should be calendar-suppressed')
 assert.equal(db.prepare("SELECT role FROM users WHERE email='faculty@rsms.local'").get().role, 'faculty', 'Faculty demo account missing')
 assert.equal(db.prepare('SELECT COUNT(*) AS c FROM attendance_baselines').get().c, 7, 'Expected seven official attendance baselines')
-assert.equal(db.prepare('SELECT COUNT(*) AS c FROM attendance_entries').get().c, 29, 'Expected reconstructed attendance through 22 Sep')
+assert.equal(db.prepare('SELECT COUNT(*) AS c FROM attendance_entries').get().c, 32, 'Expected attendance entries through 23 Sep')
 assert.equal(db.prepare("SELECT COUNT(*) AS c FROM attendance_entries WHERE date='2026-09-17' AND status='absent' AND actual_subject_code IN ('AAD','CN')").get().c, 2, '17 Sep AAD/CN absences must be seeded')
 assert.equal(db.prepare("SELECT COUNT(*) AS c FROM attendance_entries WHERE date='2026-09-21'").get().c, 0, 'Holiday on 21 Sep must not generate attendance')
 assert.ok(db.prepare("SELECT COUNT(*) AS c FROM attendance_baselines WHERE attended IS NOT NULL AND total IS NOT NULL").get().c === 7, 'All seven attendance baselines should have reconstructed counts')
@@ -31,4 +31,4 @@ function walk(dir){
   }
 }
 walk(root)
-console.log('RSMS verification passed: timetable, calendar, roles, reconstructed attendance through 22 Sep, verified 17 Sep absences and privacy checks are valid.')
+console.log('RSMS verification passed: timetable, calendar, roles, attendance through 23 Sep, verified absences and privacy checks are valid.')

@@ -1,5 +1,15 @@
-const CACHE = 'rsms-reimagined-v4-1-20260924'
-const APP_SHELL = ['/', '/manifest.webmanifest', '/favicon.svg', '/icon-192.png', '/icon-512.png']
+const CACHE = 'rsms-reimagined-v4-2-premium-icon-20260924'
+const APP_SHELL = [
+  '/',
+  '/manifest.webmanifest',
+  '/favicon.svg',
+  '/rsms-icon-192-v42.png',
+  '/rsms-icon-512-v42.png',
+  '/rsms-icon-1024-v42.png',
+  '/rsms-maskable-192-v42.png',
+  '/rsms-maskable-512-v42.png',
+  '/rsms-apple-touch-180-v42.png',
+]
 
 self.addEventListener('install', event => {
   event.waitUntil(

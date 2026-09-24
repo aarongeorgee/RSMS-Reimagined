@@ -30,6 +30,7 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.production
 
 # vercel
 .vercel
@@ -47,22 +48,13 @@ next-env.d.ts
 
 # local evaluation database
 /backend/runtime/
-.dev.vars
 
-# Local secrets
+# Local secrets/runtime
 .dev.vars
 .env.local
-
-# Runtime databases
+.wrangler/
+node_modules/
+dist/
 backend/runtime/*.sqlite
 backend/runtime/*.sqlite-shm
 backend/runtime/*.sqlite-wal
-
-# Cloudflare local state
-.wrangler/
-
-# Build output
-dist/
-
-# Dependencies
-node_modules/
