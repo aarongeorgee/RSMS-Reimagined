@@ -1,7 +1,6 @@
 import vinext from "vinext";
 import { defineConfig } from "vite";
 import { readExecutionProfile } from "./scripts/execution-profile.mjs";
-import { responseStoreAdapter } from "@vinext/cloudflare/cache/response-store-adapter";
 import { imagesOptimizer } from "@vinext/cloudflare/images/images-optimizer";
 import { cloudflare } from "@cloudflare/vite-plugin";
 
@@ -60,7 +59,6 @@ export default defineConfig(async () => {
     },
     plugins: [
       vinext({
-        cache: responseStoreAdapter(),
         images: { optimizer: imagesOptimizer() },
       }),
       cloudflare({
