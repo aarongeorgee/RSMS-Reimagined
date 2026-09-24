@@ -1,0 +1,309 @@
+{
+  "_comment": "Attendance reconstruction through 22-Sep-2026. Official percentages through 12-Sep anchor estimated baseline counts; 13-22 Sep scheduled enrolled classes are assumed present unless verified absent. All reconstructed entries are editable.",
+  "records": [
+    {
+      "date": "2026-09-14",
+      "subject": "Web Programming",
+      "dayOfWeek": "Monday",
+      "time": "08:30",
+      "status": "present",
+      "source": "reconstructed"
+    },
+    {
+      "date": "2026-09-14",
+      "subject": "Algorithm Analysis and Design",
+      "dayOfWeek": "Monday",
+      "time": "09:35",
+      "status": "present",
+      "source": "reconstructed"
+    },
+    {
+      "date": "2026-09-14",
+      "subject": "Computer Networks",
+      "dayOfWeek": "Monday",
+      "time": "11:00",
+      "status": "present",
+      "source": "reconstructed"
+    },
+    {
+      "date": "2026-09-14",
+      "subject": "Database Management Systems",
+      "dayOfWeek": "Monday",
+      "time": "13:00",
+      "status": "present",
+      "source": "reconstructed"
+    },
+    {
+      "date": "2026-09-14",
+      "subject": "Software Project Management (S5 Elective)",
+      "dayOfWeek": "Monday",
+      "time": "14:00",
+      "status": "present",
+      "source": "reconstructed"
+    },
+    {
+      "date": "2026-09-15",
+      "subject": "Database Management Systems",
+      "dayOfWeek": "Tuesday",
+      "time": "08:30",
+      "status": "present",
+      "source": "reconstructed"
+    },
+    {
+      "date": "2026-09-15",
+      "subject": "Web Programming",
+      "dayOfWeek": "Tuesday",
+      "time": "09:35",
+      "status": "present",
+      "source": "reconstructed"
+    },
+    {
+      "date": "2026-09-15",
+      "subject": "Design Thinking and Creativity",
+      "dayOfWeek": "Tuesday",
+      "time": "11:00",
+      "status": "present",
+      "source": "reconstructed"
+    },
+    {
+      "date": "2026-09-15",
+      "subject": "Computer Networks",
+      "dayOfWeek": "Tuesday",
+      "time": "13:00",
+      "status": "present",
+      "source": "reconstructed"
+    },
+    {
+      "date": "2026-09-15",
+      "subject": "Web Programming",
+      "dayOfWeek": "Tuesday",
+      "time": "14:00",
+      "status": "present",
+      "source": "reconstructed"
+    },
+    {
+      "date": "2026-09-15",
+      "subject": "Algorithm Analysis and Design",
+      "dayOfWeek": "Tuesday",
+      "time": "15:15",
+      "status": "present",
+      "source": "reconstructed"
+    },
+    {
+      "date": "2026-09-16",
+      "subject": "DBMS Lab",
+      "dayOfWeek": "Wednesday",
+      "time": "08:30",
+      "status": "present",
+      "source": "reconstructed"
+    },
+    {
+      "date": "2026-09-16",
+      "subject": "Algorithm Analysis and Design",
+      "dayOfWeek": "Wednesday",
+      "time": "13:00",
+      "status": "present",
+      "source": "reconstructed"
+    },
+    {
+      "date": "2026-09-16",
+      "subject": "Database Management Systems",
+      "dayOfWeek": "Wednesday",
+      "time": "14:00",
+      "status": "present",
+      "source": "reconstructed"
+    },
+    {
+      "date": "2026-09-17",
+      "subject": "Software Project Management (S5 Elective)",
+      "dayOfWeek": "Thursday",
+      "time": "08:30",
+      "status": "present",
+      "source": "reconstructed"
+    },
+    {
+      "date": "2026-09-17",
+      "subject": "Database Management Systems",
+      "dayOfWeek": "Thursday",
+      "time": "09:35",
+      "status": "present",
+      "source": "reconstructed"
+    },
+    {
+      "date": "2026-09-17",
+      "subject": "Design Thinking and Creativity",
+      "dayOfWeek": "Thursday",
+      "time": "11:00",
+      "status": "present",
+      "source": "reconstructed"
+    },
+    {
+      "date": "2026-09-17",
+      "subject": "Algorithm Analysis and Design",
+      "dayOfWeek": "Thursday",
+      "time": "13:00",
+      "status": "absent",
+      "source": "verified"
+    },
+    {
+      "date": "2026-09-17",
+      "subject": "Computer Networks",
+      "dayOfWeek": "Thursday",
+      "time": "14:00",
+      "status": "absent",
+      "source": "verified"
+    },
+    {
+      "date": "2026-09-17",
+      "subject": "Web Programming",
+      "dayOfWeek": "Thursday",
+      "time": "15:15",
+      "status": "present",
+      "source": "reconstructed"
+    },
+    {
+      "date": "2026-09-18",
+      "subject": "Algorithm Analysis and Design",
+      "dayOfWeek": "Friday",
+      "time": "08:30",
+      "status": "present",
+      "source": "reconstructed"
+    },
+    {
+      "date": "2026-09-18",
+      "subject": "Computer Networks",
+      "dayOfWeek": "Friday",
+      "time": "09:30",
+      "status": "present",
+      "source": "reconstructed"
+    },
+    {
+      "date": "2026-09-18",
+      "subject": "Software Project Management (S5 Elective)",
+      "dayOfWeek": "Friday",
+      "time": "10:40",
+      "status": "present",
+      "source": "reconstructed"
+    },
+    {
+      "date": "2026-09-22",
+      "subject": "Database Management Systems",
+      "dayOfWeek": "Tuesday",
+      "time": "08:30",
+      "status": "present",
+      "source": "reconstructed"
+    },
+    {
+      "date": "2026-09-22",
+      "subject": "Web Programming",
+      "dayOfWeek": "Tuesday",
+      "time": "09:35",
+      "status": "present",
+      "source": "reconstructed"
+    },
+    {
+      "date": "2026-09-22",
+      "subject": "Design Thinking and Creativity",
+      "dayOfWeek": "Tuesday",
+      "time": "11:00",
+      "status": "present",
+      "source": "reconstructed"
+    },
+    {
+      "date": "2026-09-22",
+      "subject": "Computer Networks",
+      "dayOfWeek": "Tuesday",
+      "time": "13:00",
+      "status": "present",
+      "source": "reconstructed"
+    },
+    {
+      "date": "2026-09-22",
+      "subject": "Web Programming",
+      "dayOfWeek": "Tuesday",
+      "time": "14:00",
+      "status": "present",
+      "source": "reconstructed"
+    },
+    {
+      "date": "2026-09-22",
+      "subject": "Algorithm Analysis and Design",
+      "dayOfWeek": "Tuesday",
+      "time": "15:15",
+      "status": "present",
+      "source": "reconstructed"
+    }
+  ],
+  "summary": [
+    {
+      "subject": "Computer Networks",
+      "attended": 47,
+      "missed": 3,
+      "total": 50,
+      "percentage": 94.0,
+      "baselineAttended": 43,
+      "baselineTotal": 45,
+      "officialPercentage": 96
+    },
+    {
+      "subject": "Web Programming",
+      "attended": 45,
+      "missed": 6,
+      "total": 51,
+      "percentage": 88.2,
+      "baselineAttended": 39,
+      "baselineTotal": 45,
+      "officialPercentage": 87
+    },
+    {
+      "subject": "Database Management Systems",
+      "attended": 43,
+      "missed": 4,
+      "total": 47,
+      "percentage": 91.5,
+      "baselineAttended": 38,
+      "baselineTotal": 42,
+      "officialPercentage": 90
+    },
+    {
+      "subject": "Algorithm Analysis and Design",
+      "attended": 53,
+      "missed": 3,
+      "total": 56,
+      "percentage": 94.6,
+      "baselineAttended": 48,
+      "baselineTotal": 50,
+      "officialPercentage": 96
+    },
+    {
+      "subject": "Software Project Management (S5 Elective)",
+      "attended": 30,
+      "missed": 2,
+      "total": 32,
+      "percentage": 93.8,
+      "baselineAttended": 27,
+      "baselineTotal": 29,
+      "officialPercentage": 93
+    },
+    {
+      "subject": "Design Thinking and Creativity",
+      "attended": 24,
+      "missed": 3,
+      "total": 27,
+      "percentage": 88.9,
+      "baselineAttended": 21,
+      "baselineTotal": 24,
+      "officialPercentage": 88
+    },
+    {
+      "subject": "DBMS Lab",
+      "attended": 9,
+      "missed": 1,
+      "total": 10,
+      "percentage": 90.0,
+      "baselineAttended": 8,
+      "baselineTotal": 9,
+      "officialPercentage": 89
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "destinations": [
+    {
+      "id": "fbk-001",
+      "title": "End-of-Semester Course Feedback",
+      "description": "Fictional structured feedback form for rating each subject and instructor this semester.",
+      "type": "feedback",
+      "external": true
+    },
+    {
+      "id": "fbk-002",
+      "title": "Hostel Facilities Survey",
+      "description": "Fictional short survey on hostel amenities and mess quality.",
+      "type": "survey",
+      "external": true
+    },
+    {
+      "id": "fbk-003",
+      "title": "Library Services Feedback",
+      "description": "Fictional feedback form for the central library's services and working hours.",
+      "type": "feedback",
+      "external": true
+    },
+    {
+      "id": "fbk-004",
+      "title": "Campus Wi-Fi Experience Survey",
+      "description": "Fictional survey on campus network reliability and speed.",
+      "type": "survey",
+      "external": true
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+node_modules
+.next
+dist
+.vinext
+.wrangler
+.sites-runtime
+backend/runtime
+.git
+*.zip

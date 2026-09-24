@@ -1,0 +1,37 @@
+{
+  "source": "S5 CS A timetable, Third Year Odd Semester 2026, effective June 2026",
+  "timezone": "Asia/Kolkata",
+  "timetable": [
+    {"id":"MON-1","day":"Monday","dayIndex":1,"period":1,"subjectCode":"WP","subject":"Web Programming","shortName":"WP","startTime":"08:30","endTime":"09:35","room":"MB, LH4","kind":"Theory","trackAttendance":true},
+    {"id":"MON-2","day":"Monday","dayIndex":1,"period":2,"subjectCode":"AAD","subject":"Algorithm Analysis and Design","shortName":"AAD","startTime":"09:35","endTime":"10:40","room":"MB, LH4","kind":"Theory","trackAttendance":true},
+    {"id":"MON-3","day":"Monday","dayIndex":1,"period":3,"subjectCode":"CN","subject":"Computer Networks","shortName":"CN","startTime":"11:00","endTime":"12:00","room":"MB, LH4","kind":"Theory","trackAttendance":true},
+    {"id":"MON-4","day":"Monday","dayIndex":1,"period":4,"subjectCode":"DBMS","subject":"Database Management Systems","shortName":"DBMS","startTime":"13:00","endTime":"14:00","room":"MB, LH4","kind":"Theory","trackAttendance":true},
+    {"id":"MON-5","day":"Monday","dayIndex":1,"period":5,"subjectCode":"ELECTIVE","subject":"S5 Elective (CG / SPM / MML)","shortName":"Elective","startTime":"14:00","endTime":"15:00","room":"LH 4/5/6/8","kind":"Elective","trackAttendance":true},
+    {"id":"MON-6","day":"Monday","dayIndex":1,"period":6,"subjectCode":"OPTIONAL","subject":"Honour / Course Tutorial / Add-on / Remedial","shortName":"Optional","startTime":"15:15","endTime":"16:15","room":"As allotted","kind":"Optional","trackAttendance":false},
+
+    {"id":"TUE-1","day":"Tuesday","dayIndex":2,"period":1,"subjectCode":"DBMS","subject":"Database Management Systems","shortName":"DBMS","startTime":"08:30","endTime":"09:35","room":"MB, LH4","kind":"Theory","trackAttendance":true},
+    {"id":"TUE-2","day":"Tuesday","dayIndex":2,"period":2,"subjectCode":"WP","subject":"Web Programming Tutorial","shortName":"WP (T)","startTime":"09:35","endTime":"10:40","room":"MB, LH4","kind":"Tutorial","trackAttendance":true},
+    {"id":"TUE-3","day":"Tuesday","dayIndex":2,"period":3,"subjectCode":"DT","subject":"Design Thinking and Creativity","shortName":"DT","startTime":"11:00","endTime":"12:00","room":"MB, LH4","kind":"Theory","trackAttendance":true},
+    {"id":"TUE-4","day":"Tuesday","dayIndex":2,"period":4,"subjectCode":"CN","subject":"Computer Networks","shortName":"CN","startTime":"13:00","endTime":"14:00","room":"MB, LH4","kind":"Theory","trackAttendance":true},
+    {"id":"TUE-5","day":"Tuesday","dayIndex":2,"period":5,"subjectCode":"WP","subject":"Web Programming","shortName":"WP","startTime":"14:00","endTime":"15:00","room":"MB, LH4","kind":"Theory","trackAttendance":true},
+    {"id":"TUE-6","day":"Tuesday","dayIndex":2,"period":6,"subjectCode":"AAD","subject":"Algorithm Analysis and Design Tutorial","shortName":"AAD (T)","startTime":"15:15","endTime":"16:15","room":"MB, LH4","kind":"Tutorial","trackAttendance":true},
+
+    {"id":"WED-LAB","day":"Wednesday","dayIndex":3,"period":1,"subjectCode":"DBMSLAB","subject":"DBMS Lab","shortName":"DBMS Lab","startTime":"08:30","endTime":"12:00","room":"Feynman Lab","kind":"Lab","trackAttendance":true,"note":"Includes the scheduled morning interval."},
+    {"id":"WED-4","day":"Wednesday","dayIndex":3,"period":4,"subjectCode":"AAD","subject":"Algorithm Analysis and Design","shortName":"AAD","startTime":"13:00","endTime":"14:00","room":"MB, LH4","kind":"Theory","trackAttendance":true},
+    {"id":"WED-5","day":"Wednesday","dayIndex":3,"period":5,"subjectCode":"DBMS","subject":"Database Management Systems Tutorial","shortName":"DBMS (T)","startTime":"14:00","endTime":"15:00","room":"MB, LH4","kind":"Tutorial","trackAttendance":true},
+    {"id":"WED-6","day":"Wednesday","dayIndex":3,"period":6,"subjectCode":"OPTIONAL","subject":"Honour / Course Tutorial / Add-on / Remedial","shortName":"Optional","startTime":"15:15","endTime":"16:15","room":"As allotted","kind":"Optional","trackAttendance":false},
+
+    {"id":"THU-1","day":"Thursday","dayIndex":4,"period":1,"subjectCode":"ELECTIVE","subject":"S5 Elective (CG / SPM / MML)","shortName":"Elective","startTime":"08:30","endTime":"09:35","room":"LH 4/5/6/8","kind":"Elective","trackAttendance":true},
+    {"id":"THU-2","day":"Thursday","dayIndex":4,"period":2,"subjectCode":"DBMS","subject":"Database Management Systems","shortName":"DBMS","startTime":"09:35","endTime":"10:40","room":"MB, LH4","kind":"Theory","trackAttendance":true},
+    {"id":"THU-3","day":"Thursday","dayIndex":4,"period":3,"subjectCode":"DT","subject":"Design Thinking and Creativity","shortName":"DT","startTime":"11:00","endTime":"12:00","room":"MB, LH4","kind":"Theory","trackAttendance":true},
+    {"id":"THU-4","day":"Thursday","dayIndex":4,"period":4,"subjectCode":"AAD","subject":"Algorithm Analysis and Design","shortName":"AAD","startTime":"13:00","endTime":"14:00","room":"MB, LH4","kind":"Theory","trackAttendance":true},
+    {"id":"THU-5","day":"Thursday","dayIndex":4,"period":5,"subjectCode":"CN","subject":"Computer Networks","shortName":"CN","startTime":"14:00","endTime":"15:00","room":"MB, LH4","kind":"Theory","trackAttendance":true},
+    {"id":"THU-6","day":"Thursday","dayIndex":4,"period":6,"subjectCode":"WP","subject":"Web Programming","shortName":"WP","startTime":"15:15","endTime":"16:15","room":"Feynman Lab","kind":"Practical","trackAttendance":true},
+
+    {"id":"FRI-1","day":"Friday","dayIndex":5,"period":1,"subjectCode":"AAD","subject":"Algorithm Analysis and Design","shortName":"AAD","startTime":"08:30","endTime":"09:30","room":"MB, LH4","kind":"Theory","trackAttendance":true},
+    {"id":"FRI-2","day":"Friday","dayIndex":5,"period":2,"subjectCode":"CN","subject":"Computer Networks","shortName":"CN","startTime":"09:30","endTime":"10:30","room":"MB, LH4","kind":"Theory","trackAttendance":true},
+    {"id":"FRI-3","day":"Friday","dayIndex":5,"period":3,"subjectCode":"ELECTIVE","subject":"S5 Elective (CG / SPM / MML)","shortName":"Elective","startTime":"10:40","endTime":"11:35","room":"LH 4/5/6/8","kind":"Elective","trackAttendance":true},
+    {"id":"FRI-4","day":"Friday","dayIndex":5,"period":4,"subjectCode":"MENTORING","subject":"Mentoring / Activity Hour","shortName":"Mentoring","startTime":"11:35","endTime":"12:30","room":"As allotted","kind":"Activity","trackAttendance":false},
+    {"id":"FRI-LAB","day":"Friday","dayIndex":5,"period":5,"subjectCode":"CNLAB","subject":"Computer Networks Lab","shortName":"CN Lab","startTime":"14:00","endTime":"16:30","room":"Zuse Lab","kind":"Lab","trackAttendance":true}
+  ]
+}

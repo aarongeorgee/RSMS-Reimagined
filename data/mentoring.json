@@ -1,0 +1,22 @@
+{
+  "entries": [
+    {
+      "id": "mnt-001",
+      "date": "2026-09-04T15:00:00+05:30",
+      "mentor": "Faculty Mentor",
+      "note": "Discussed semester course load and confirmed attendance is on track across all subjects."
+    },
+    {
+      "id": "mnt-002",
+      "date": "2026-08-14T15:00:00+05:30",
+      "mentor": "Faculty Mentor",
+      "note": "Reviewed Internal 1 marks and set a study plan for the upcoming Sessional exams."
+    },
+    {
+      "id": "mnt-003",
+      "date": "2026-07-10T15:00:00+05:30",
+      "mentor": "Faculty Mentor",
+      "note": "Start-of-semester check-in. No concerns raised; goals for the semester noted."
+    }
+  ]
+}

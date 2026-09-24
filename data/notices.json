@@ -1,0 +1,41 @@
+{
+  "_comment": "Privacy-safe notices for the coursework demo. Course-specific evaluation information comes from the user's evaluation notice; other service notices are fictional.",
+  "notices": [
+    {
+      "id": "ntc-001",
+      "title": "Web Programming project evaluation",
+      "body": "Project evaluation is scheduled for 24 September 2026. All group members should be available. The presentation duration is 15 minutes and students should be prepared for viva, demonstration and small live code updates.",
+      "category": "academic",
+      "postedAt": "2026-09-22T09:00:00+05:30",
+      "postedBy": "Course Evaluation Desk",
+      "priority": "urgent"
+    },
+    {
+      "id": "ntc-002",
+      "title": "Attendance eligibility reminder",
+      "body": "The demo attendance intelligence uses 80% as the Internal Examination threshold and 75% as the Main ESE threshold, as provided for this project.",
+      "category": "academic",
+      "postedAt": "2026-09-21T12:00:00+05:30",
+      "postedBy": "Academic Portal",
+      "priority": "important"
+    },
+    {
+      "id": "ntc-003",
+      "title": "Odd semester teaching period nearing completion",
+      "body": "The original academic calendar marked 30 September 2026 as the semester end, but regular S5 teaching has been extended through 9 October 2026.",
+      "category": "academic",
+      "postedAt": "2026-09-20T10:00:00+05:30",
+      "postedBy": "Academic Portal",
+      "priority": "normal"
+    },
+    {
+      "id": "ntc-004",
+      "title": "Library service demo notice",
+      "body": "This is a fictional service notice included only to demonstrate notice filtering and rendering in the student portal.",
+      "category": "administrative",
+      "postedAt": "2026-09-18T10:00:00+05:30",
+      "postedBy": "Demo Services",
+      "priority": "normal"
+    }
+  ]
+}

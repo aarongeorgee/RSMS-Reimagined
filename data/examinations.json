@@ -1,0 +1,8 @@
+{
+  "_comment": "Only examination windows supported by the supplied 2026 academic calendar are included. No subject-wise room, seat, or exact exam-time data was supplied.",
+  "examinations": [
+    {"subject":"Semester 5 Internal Examination","date":"2026-07-20","endDate":"2026-07-25","examType":"Internal Examination","startTime":"","endTime":"","room":"","seat":""},
+    {"subject":"End Semester Theory Examination","date":"2026-10-12","endDate":"2026-11-06","examType":"ESE Theory","startTime":"","endTime":"","room":"","seat":""},
+    {"subject":"Practical End Semester Examination","date":"2026-11-09","endDate":"2026-11-13","examType":"Practical ESE","startTime":"","endTime":"","room":"","seat":""}
+  ]
+}

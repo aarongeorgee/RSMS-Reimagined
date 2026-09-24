@@ -1,0 +1,52 @@
+{
+  "resources": [
+    {
+      "id": "res-001",
+      "title": "Semester Course Handbook",
+      "description": "Fictional PDF handbook covering the current semester's course structure and grading policy.",
+      "group": "downloads"
+    },
+    {
+      "id": "res-002",
+      "title": "Lab Manual Templates",
+      "description": "Fictional downloadable templates for lab record submissions.",
+      "group": "downloads"
+    },
+    {
+      "id": "res-003",
+      "title": "Library Catalog",
+      "description": "Browse the fictional central library's book and journal catalog.",
+      "group": "library"
+    },
+    {
+      "id": "res-004",
+      "title": "E-Journal Access",
+      "description": "Fictional access point for subscribed academic e-journals.",
+      "group": "library"
+    },
+    {
+      "id": "res-005",
+      "title": "Previous Year Question Papers",
+      "description": "Fictional archive of previous semesters' end examination papers.",
+      "group": "academic"
+    },
+    {
+      "id": "res-006",
+      "title": "Departmental Reading List",
+      "description": "Fictional recommended reading list curated by the department.",
+      "group": "academic"
+    },
+    {
+      "id": "res-007",
+      "title": "Student Counselling Cell",
+      "description": "Fictional information page for the student counselling and wellness cell.",
+      "group": "other"
+    },
+    {
+      "id": "res-008",
+      "title": "Alumni Network",
+      "description": "Fictional directory for connecting with alumni mentors.",
+      "group": "other"
+    }
+  ]
+}

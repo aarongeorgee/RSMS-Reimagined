@@ -1,0 +1,19 @@
+{
+  "_comment": "Fictional demo marks only. Course names are aligned to the supplied S5 CS A timetable; values are not real academic records.",
+  "marks": [
+    { "subject": "Web Programming", "component": "Mid Term 1", "maxMarks": 30, "obtainedMarks": 24, "semester": 5 },
+    { "subject": "Web Programming", "component": "Assignment", "maxMarks": 10, "obtainedMarks": 9, "semester": 5 },
+    { "subject": "Algorithm Analysis and Design", "component": "Mid Term 1", "maxMarks": 30, "obtainedMarks": 22, "semester": 5 },
+    { "subject": "Algorithm Analysis and Design", "component": "Assignment", "maxMarks": 10, "obtainedMarks": 8, "semester": 5 },
+    { "subject": "Computer Networks", "component": "Mid Term 1", "maxMarks": 30, "obtainedMarks": 25, "semester": 5 },
+    { "subject": "Computer Networks", "component": "Assignment", "maxMarks": 10, "obtainedMarks": 9, "semester": 5 },
+    { "subject": "Database Management Systems", "component": "Mid Term 1", "maxMarks": 30, "obtainedMarks": 23, "semester": 5 },
+    { "subject": "Database Management Systems", "component": "Assignment", "maxMarks": 10, "obtainedMarks": 8, "semester": 5 },
+    { "subject": "Design Thinking and Creativity", "component": "Mid Term 1", "maxMarks": 30, "obtainedMarks": 27, "semester": 5 },
+    { "subject": "Design Thinking and Creativity", "component": "Assignment", "maxMarks": 10, "obtainedMarks": 9, "semester": 5 },
+    { "subject": "S5 Elective (CG / SPM / MML)", "component": "Mid Term 1", "maxMarks": 30, "obtainedMarks": 21, "semester": 5 },
+    { "subject": "S5 Elective (CG / SPM / MML)", "component": "Assignment", "maxMarks": 10, "obtainedMarks": 8, "semester": 5 },
+    { "subject": "DBMS Lab", "component": "Sessional", "maxMarks": 50, "obtainedMarks": 45, "semester": 5 },
+    { "subject": "Computer Networks Lab", "component": "Sessional", "maxMarks": 50, "obtainedMarks": 44, "semester": 5 }
+  ]
+}

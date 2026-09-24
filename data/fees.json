@@ -1,0 +1,19 @@
+{
+  "fees": {
+    "semester": "Odd 2026-27",
+    "totalDue": 7000,
+    "totalPaid": 93000,
+    "components": [
+      { "label": "Tuition Fee", "amount": 65000, "dueDate": "2026-08-15", "status": "paid" },
+      { "label": "Hostel Fee", "amount": 20000, "dueDate": "2026-08-15", "status": "paid" },
+      { "label": "Examination Fee", "amount": 5000, "dueDate": "2026-09-20", "status": "due" },
+      { "label": "Library Fee", "amount": 2000, "dueDate": "2026-09-20", "status": "due" },
+      { "label": "Lab Fee", "amount": 8000, "dueDate": "2026-08-15", "status": "paid" }
+    ],
+    "transactions": [
+      { "id": "txn-001", "date": "2026-08-10", "amount": 65000, "mode": "online", "receiptNumber": "RCPT-2026-0091" },
+      { "id": "txn-002", "date": "2026-08-10", "amount": 20000, "mode": "online", "receiptNumber": "RCPT-2026-0092" },
+      { "id": "txn-003", "date": "2026-08-12", "amount": 8000, "mode": "dd", "receiptNumber": "RCPT-2026-0104" }
+    ]
+  }
+}

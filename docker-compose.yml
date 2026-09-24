@@ -1,0 +1,15 @@
+services:
+  rsms:
+    build: .
+    ports:
+      - "8787:8787"
+      - "5001:5001"
+    environment:
+      API_PORT: 5001
+      TEACHING_TERM_START: 2026-06-15
+      TEACHING_TERM_END: 2026-10-09
+    volumes:
+      - rsms_runtime:/app/backend/runtime
+    restart: unless-stopped
+volumes:
+  rsms_runtime:

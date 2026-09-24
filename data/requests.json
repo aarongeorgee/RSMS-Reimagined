@@ -1,0 +1,55 @@
+{
+  "requests": [
+    {
+      "id": "req-001",
+      "type": "hostelRefund",
+      "description": "Requesting a refund of the hostel caution deposit after vacating Block C in July.",
+      "status": "resolved",
+      "submittedAt": "2026-07-20T10:00:00+05:30",
+      "updatedAt": "2026-07-28T15:00:00+05:30",
+      "remarks": "Refund processed and credited to the registered bank account."
+    },
+    {
+      "id": "req-002",
+      "type": "messRefund",
+      "description": "Was on approved leave for 6 days during the last billing cycle and would like a pro-rated mess fee refund.",
+      "status": "resolved",
+      "submittedAt": "2026-08-02T09:30:00+05:30",
+      "updatedAt": "2026-08-09T12:00:00+05:30",
+      "remarks": "Verified against the leave register. Refund approved."
+    },
+    {
+      "id": "req-003",
+      "type": "activityPoints",
+      "description": "Requesting activity points for participating in the inter-college coding contest held last month.",
+      "status": "inReview",
+      "submittedAt": "2026-09-05T11:00:00+05:30",
+      "updatedAt": "2026-09-07T09:15:00+05:30"
+    },
+    {
+      "id": "req-004",
+      "type": "facility",
+      "description": "The reading room lights on the second floor of the library have been flickering for a week.",
+      "status": "inReview",
+      "submittedAt": "2026-09-09T16:20:00+05:30",
+      "updatedAt": "2026-09-10T10:00:00+05:30",
+      "remarks": "Forwarded to the facilities team for inspection."
+    },
+    {
+      "id": "req-005",
+      "type": "grievance",
+      "description": "The projector in Seminar Hall 2 was not working during a scheduled class presentation.",
+      "status": "submitted",
+      "submittedAt": "2026-09-12T13:45:00+05:30",
+      "updatedAt": "2026-09-12T13:45:00+05:30"
+    },
+    {
+      "id": "req-006",
+      "type": "suggestion",
+      "description": "Suggesting an additional water dispenser near the third-floor labs, since the nearest one is a full floor away.",
+      "status": "submitted",
+      "submittedAt": "2026-09-13T08:10:00+05:30",
+      "updatedAt": "2026-09-13T08:10:00+05:30"
+    }
+  ]
+}

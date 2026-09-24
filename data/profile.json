@@ -1,0 +1,12 @@
+{
+  "_comment": "Fictional demo profile for coursework evaluation. No real student identity is stored.",
+  "profile": {
+    "rollNumber": "DEMO001",
+    "name": "Demo Student",
+    "program": "B.Tech Computer Science",
+    "branch": "Computer Science",
+    "semester": 5,
+    "section": "A",
+    "email": "demo.student@example.invalid"
+  }
+}
