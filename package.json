@@ -22,17 +22,20 @@
     "start:full": "node scripts/start-full.mjs",
     "verify:deploy": "npm run verify && npm run build",
     "deploy:web": "wrangler deploy --config dist/server/wrangler.json",
-    "deploy:api": "wrangler deploy --config wrangler.api.jsonc"
+    "deploy:api": "wrangler deploy --config wrangler.api.jsonc",
+    "deploy:vinext": "vinext-cloudflare deploy --config dist/server/wrangler.json"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",
     "@hookform/resolvers": "^5.7.1",
     "@shadcn/react": "^0.3.0",
+    "@vinext/cloudflare": "1.0.0-beta.5",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
     "cmdk": "^1.1.1",
     "date-fns": "^4.4.0",
     "embla-carousel-react": "^8.6.0",
+    "express": "^5.1.0",
     "input-otp": "^1.4.2",
     "lucide-react": "^1.31.0",
     "next": "16.3.4",
@@ -47,8 +50,7 @@
     "sonner": "^2.0.8",
     "tailwind-merge": "3.6.0",
     "vaul": "^1.1.2",
-    "zod": "^3.25.76",
-    "express": "^5.1.0"
+    "zod": "^3.25.76"
   },
   "devDependencies": {
     "@cloudflare/vite-plugin": "1.37.1",
